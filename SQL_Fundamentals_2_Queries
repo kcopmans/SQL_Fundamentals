@@ -1,0 +1,72 @@
+QUERIES OVERVIEW
+----------------
+
+SELECT is the clause you use every time you want to query information from a database.
+WHERE is a popular command that lets you filter the results of the query based on conditions that you specify.
+LIKE and BETWEEN are special operators that can be used in a WHERE clause
+AND and OR are special operators that you can use with WHERE to filter the query on two or more conditions.
+ORDER BY lets you sort the results of the query in either ascending or descending order.
+LIMIT lets you specify the maximum number of rows that the query will return. This is especially important in large tables that have thousands or even millions of rows.
+
+EXAMPLES COVERED IN THIS MODULE
+--------------------------------
+--------------------------------
+
+SELECT name, imdb_rating FROM movies;
+
+--------------------------------------------
+
+SELECT DISTINCT genre FROM movies;
+
+--------------------------------------------
+
+SELECT * FROM movies WHERE imdb_rating > 8;
+
+--------------------------------------------
+
+= equals
+!= not equals
+> greater than
+< less than
+>= greater than or equal to
+<= less than or equal to
+
+--------------------------------------------
+
+SELECT * FROM movies
+WHERE name LIKE 'Se_en';
+
+--------------------------------------------
+
+SELECT * FROM movies
+WHERE name LIKE '%man%';
+
+SELECT * FROM moviesWHERE name LIKE 'a%';
+
+------------------------------------------
+
+SELECT * FROM movies
+WHERE name BETWEEN 'A' AND 'J';
+
+SELECT * FROM movies
+WHERE year BETWEEN 1990 AND 2000;
+
+------------------------------------------
+
+SELECT * FROM movies
+WHERE year BETWEEN 1990 AND 2000
+AND genre = 'comedy';
+
+SELECT * FROM movies
+WHERE genre = 'comedy'
+OR year < 1980;
+
+------------------------------------------
+
+SELECT * FROM movies
+ORDER BY imdb_rating DESC;
+
+SELECT * FROM movies
+ORDER BY imdb_rating ASC
+LIMIT 3;
+
